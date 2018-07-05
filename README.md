@@ -6,13 +6,13 @@
 Deploy a central docker-host with [docker:dind]()
 
 ```
-docker run --privileged --name docker-host -d docker:1.8-dind
+docker run --privileged --name docker-host -d --restart always docker:18.05.0-dind
 ```
 
 Verify dind deployment with
 
 ```
-docker run --rm --link docker-host:docker docker:1.7 version
+docker run --rm --link docker-host:docker docker:18.05.0 version
 ```
 
 Start a GitLab Runner
